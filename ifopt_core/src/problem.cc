@@ -156,6 +156,7 @@ Problem::Jacobian Problem::GetJacobianOfCosts() const
 void Problem::SaveCurrent()
 {
   x_prev.push_back(variables_->GetValues());
+  cost_prev.push_back(costs_.GetValues());
 }
 
 Composite::Ptr Problem::GetOptVariables() const

@@ -264,6 +264,7 @@ class Problem {
    * @return A const reference to x_prev
    */
   const std::vector<VectorXd>& GetIterations() const { return x_prev; };
+  const std::vector<VectorXd>& GetCostIterations() const { return cost_prev; };
 
  private:
   Composite::Ptr variables_;
@@ -271,6 +272,7 @@ class Problem {
   Composite costs_;
 
   std::vector<VectorXd> x_prev;  ///< the pure variables for every iteration.
+  std::vector<VectorXd> cost_prev;
 
   VectorXd ConvertToEigen(const double* x) const;
 };
